@@ -6,6 +6,7 @@
 
 import smbus
 import time
+import os
 
 # Get I2C bus
 bus = smbus.SMBus(1)
@@ -25,6 +26,10 @@ bus.write_byte_data(0x53, 0x2D, 0x08)
 bus.write_byte_data(0x53, 0x31, 0x08)
 
 time.sleep(3)
+xAccl=0
+yAccl=0
+zAccl=0
+
 try:
 	while True:
 		# ADXL345 address, 0x53(83)
